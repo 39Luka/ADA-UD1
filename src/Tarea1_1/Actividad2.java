@@ -1,10 +1,12 @@
+package Tarea1_1;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
 /**
- * Unidad 1 Actividad 2
+ * Unidad 1 Tarea 1 Actividad 2
  * @author Silvia Cachón Leiva
  */
 
@@ -15,23 +17,23 @@ public class Actividad2 {
 
         System.out.println("Introduce el nombre del fichero: ");
 
-        String nombreFichero = sc.nextLine();
+        String fileName = sc.nextLine();
 
-        Path ruta = Path.of(nombreFichero);
+        Path path = Path.of(fileName);
 
-        if (Files.exists(ruta) && Files.isRegularFile(ruta)) {
+        if (Files.exists(path) && Files.isRegularFile(path)) {
 
-            System.out.println("¿Desea borrar el fichero: " +  nombreFichero + "?");
+            System.out.println("¿Desea borrar el fichero: " + fileName + "?");
             System.out.println("""
                     1.SI
                     2.NO
                     """);
-            int confirmacion = sc.nextInt();
+            int confirm = sc.nextInt();
 
-            if (confirmacion == 1) {
+            if (confirm == 1) {
 
                 try {
-                    Files.deleteIfExists(ruta);
+                    Files.deleteIfExists(path);
                     System.out.println("Se ha eliminado el fichero");
 
                 } catch (IOException e) {

@@ -1,11 +1,12 @@
+package Tarea1_1;
+
 import java.io.IOException;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
 /**
- * Unidad 1 Actividad 3
+ * Unidad 1 Tarea 1 Actividad 3
  * @author Silvia Cachón Leiva
  */
 public class Actividad3 {
@@ -24,11 +25,11 @@ public class Actividad3 {
                 }
             });
 
-            Path respaldo = Path.of(("respaldo"));
+            Path backup = Path.of(("respaldo"));
 
-            if(!Files.isDirectory(respaldo)) {
+            if(!Files.isDirectory(backup)) {
                 try {
-                    Files.createDirectory(respaldo);
+                    Files.createDirectory(backup);
                 } catch (IOException e) {
                     System.err.println("No se ha podido crear el directorio: respaldo");
                 }
@@ -37,10 +38,13 @@ public class Actividad3 {
 
             for (Path path : paths) {
                 try {
-                    Files.copy(path, respaldo.resolve(path.getFileName()));
+                    Files.copy(path, backup.resolve(path.getFileName()));
                 } catch (IOException e) {
                     System.err.println("No se ha copiado el fichero: " + path);                }
             }
+
+
+
 
 
 

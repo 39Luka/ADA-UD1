@@ -1,3 +1,5 @@
+package Tarea1_1;
+
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
@@ -6,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
- Unidad 1 Actividad 1
+ Unidad 1 Tarea 1 Actividad 1
  @author Silvia Cachón Leiva
  */
 
@@ -17,16 +19,16 @@ public class Actividad1 {
 
         System.out.println("Introduce una ruta:");
 
-        String nombreRuta = sc.nextLine();
+        String pathName = sc.nextLine();
 
-        Path ruta = Paths.get(nombreRuta);
+        Path originPath = Paths.get(pathName);
 
-        if( Files.exists(ruta) && Files.isDirectory(ruta)) {
+        if(Files.exists(originPath) && Files.isDirectory(originPath)) {
 
             try {
-                DirectoryStream<Path> paths = Files.newDirectoryStream(ruta);
+                DirectoryStream<Path> paths = Files.newDirectoryStream(originPath);
 
-                paths.forEach(path -> {
+                paths.forEach(path-> {
 
                     if (Files.isDirectory(path))
                         System.out.println("Directorio" + path);
