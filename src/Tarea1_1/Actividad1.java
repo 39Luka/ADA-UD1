@@ -16,14 +16,14 @@ public class Actividad1 {
 
         System.out.println("Introduce una ruta:");
 
-        String pathName = sc.nextLine();
+        String nombrePath = sc.nextLine();
 
-        Path originPath = Paths.get(pathName);
+        Path origen = Paths.get(nombrePath);
 
-        if(Files.exists(originPath) && Files.isDirectory(originPath)) {
+        if(Files.exists(origen) && Files.isDirectory(origen)) {
 
             try {
-                DirectoryStream<Path> paths = Files.newDirectoryStream(originPath);
+                DirectoryStream<Path> paths = Files.newDirectoryStream(origen);
 
                 paths.forEach(path-> {
 
