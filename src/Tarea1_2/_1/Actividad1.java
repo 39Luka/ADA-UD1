@@ -5,10 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.*;
 
-/**
- * Unidad 1 Tarea 2.1 Actividad 1
- * @author Silvia Cachón Leiva
- */
+
 public class Actividad1 {
 
 

@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * Unidad 1 Tarea 2.1 Actividad 3
- * @author Silvia Cachón Leiva
- */
+
 public class Actividad3 {
     public static void main(String[] args) {
         try{

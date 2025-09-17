@@ -4,10 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * Unidad 1 Tarea 2.1 Actividad 2
- * @author Silvia Cachón Leiva
- */
+
 public class Actividad2 {
     public static void main(String[] args) {
 

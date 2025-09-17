@@ -5,10 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-/**
- * Unidad 1 Tarea 1 Actividad 2
- * @author Silvia Cachón Leiva
- */
+
 
 public class Actividad2 {
     public static void main(String[] args) {
