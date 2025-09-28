@@ -1,0 +1,11 @@
+{
+  "numCancelados": 1,
+  "numPendientes": 2,
+  "numEnviados": 2,
+  "pedidoMasCaro": {
+    "cliente": "Ana Martínez",
+    "id": "4",
+    "importe": 600.0
+  },
+  "totalImporte": 1776.55
+}

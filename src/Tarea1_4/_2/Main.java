@@ -1,4 +1,4 @@
-package Tarea1_4._2.config;
+package Tarea1_4._2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

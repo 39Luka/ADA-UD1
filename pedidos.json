@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "cliente": "Juan Pérez",
+    "importe": 250.75,
+    "estado": "PENDIENTE"
+  },
+  {
+    "id": 2,
+    "cliente": "María López",
+    "importe": 480.50,
+    "estado": "ENVIADO"
+  },
+  {
+    "id": 3,
+    "cliente": "Carlos García",
+    "importe": 125.00,
+    "estado": "CANCELADO"
+  },
+  {
+    "id": 4,
+    "cliente": "Ana Martínez",
+    "importe": 600.00,
+    "estado": "ENVIADO"
+  },
+  {
+    "id": 5,
+    "cliente": "Lucía Fernández",
+    "importe": 320.30,
+    "estado": "PENDIENTE"
+  }
+]
