@@ -19,55 +19,49 @@ public class Main {
         System.out.println("========");
 
         Scanner sc = new Scanner(System.in);
-        menu();
+        cargarProperties();
 
-        int opc;
-        opc = sc.nextInt();
-        sc.nextLine();
+        String linea;
 
-        while (opc != 4) {
+        System.out.println("Consola de configuración. Comandos: env, list, get <clave>, exit");
 
-            switch (opc) {
-                case 1 -> {
-                    System.out.println("Nombre propiedad: ");
-                    String nombre = sc.nextLine();
-                    encontrarPropiedad(nombre);
+        while (true) {
+            System.out.print("> ");
+            linea = sc.nextLine().trim();
 
-                }
-                case 2 -> mostrarProperties();
-                case 3 -> System.out.println(getEnv());
-
+            if (linea.equalsIgnoreCase("exit")) {
+                System.out.println("Saliendo...");
+                break;
+            } else if (linea.equalsIgnoreCase("env")) {
+                System.out.println("Entorno activo: " + getEnv());
+            } else if (linea.equalsIgnoreCase("list")) {
+                mostrarProperties();
+            } else if (linea.startsWith("get ")) {
+                String clave = linea.substring(4).trim();
+                encontrarPropiedad(clave);
+            } else {
+                System.out.println("Comando no reconocido. Usa: env, list, get <clave>, exit");
             }
-            menu();
-            opc = sc.nextInt();
-            sc.nextLine();
 
         }
     }
 
-    private static void menu() {
-        mostrarMenu("""
-                1.Consultar clave
-                2.Listar claves
-                3.Ver entorno activo
-                """);
-    }
 
     private static void mostrarMenu(String x) {
         System.out.println(x);
     }
 
     private static void cargarProperties() {
-        try(BufferedReader br = Files.newBufferedReader(Path.of("app.properties"))) {
+        try (BufferedReader br = Files.newBufferedReader(Path.of("app.properties"))) {
             properties.load(br);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        
+
         String env = getEnv();
 
-        try (BufferedReader br1 = Files.newBufferedReader(Path.of("app."+env+".properties"))){
+        try (BufferedReader br1 = Files.newBufferedReader(Path.of("app." + env + ".properties"))) {
             properties1.load(br1);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -82,12 +76,12 @@ public class Main {
         return properties.getProperty("app.env");
     }
 
-    public static void mostrarProperties(){
+    public static void mostrarProperties() {
         System.out.println("Propiedades: ");
-        effective.forEach((c,v) -> System.out.println(c+":"+v));
+        effective.forEach((c, v) -> System.out.println(c + ":" + v));
     }
 
-    public static void encontrarPropiedad (String propiedad){
+    public static void encontrarPropiedad(String propiedad) {
         System.out.println(effective.get(propiedad));
     }
 }
