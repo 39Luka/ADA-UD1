@@ -47,9 +47,7 @@ public class Main {
     }
 
 
-    private static void mostrarMenu(String x) {
-        System.out.println(x);
-    }
+
 
     private static void cargarProperties() {
         try (BufferedReader br = Files.newBufferedReader(Path.of("app.properties"))) {
